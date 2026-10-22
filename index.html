@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phase 0-1: HTML基礎確認</title>
+    <script>
+        function updateClock()
+        {
+            var now=new Date();
+            var hours=now.getHours();
+            var minutes=now.getMunutes();
+            var seconds=now.getSeconds();
+
+            if(hours<10)hours="0"+hours;
+            if(minutes<10)minutes="0"+minutes;
+            if(seconds<10)seconds="0"+seconds;
+
+            var timeString=hours+":"+minutes+":"+seconds;
+            document.getElementById("clock").interHTML=timeString;
+        }
+        setInterval(updateClock,1000);
+        window.onload=updateClock;
+    </script>
 </head>
 <body>
-   <img src="https://www.free-materials.com/adm/wp-content/uploads/2021/09/0adpDSC_1339-.jpg" width="300" height="200">
+   <h1>現在時刻</h1>
+    <div id="clock" style="font-size:48px; font-weight:bold;color:blue;">
+        00:00:00
+    </div>
+    <img src="https://www.free-materials.com/adm/wp-content/uploads/2021/09/0adpDSC_1339-.jpg" width="300" height="200">
     <h1>京都のおすすめの食べ物紹介</h1>
         <ol>
             <li>天ぷら</li>
